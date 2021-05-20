@@ -31,15 +31,10 @@ class BlockEnemies:
         y = self.initial_y
         x_incrument = self.enemy_width
         for _ in range(self.enemy_number):
-            print("NEW BLOCK")
             new_block = create_block((x, y), choice(self.tutle_colours))
             self.enemies.append(new_block)
             x -= x_incrument
-            print(len(self.enemies))
             if len(self.enemies) % 15 == 0:
-                print(len(self.enemies))
-                print("FLIP")
                 y += self.enemy_width * 1/2
                 x += x_incrument
                 x_incrument *= -1
-                print(f"----> {x_incrument}")
